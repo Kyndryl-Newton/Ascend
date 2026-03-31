@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0a6ed1" />
+  <title>Ascend PWA</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icons/icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">A</div>
+        <div>
+          <h1 id="appTitle">Ascend</h1>
+          <div class="brand-sub" id="appSubtitle">SAP Transformation Agent</div>
+        </div>
+      </div>
+      <div id="nav" class="nav"></div>
+      <div class="sidebar-footer">
+        <div>Installed PWA-ready</div>
+        <div id="fileStatus">No workbook selected</div>
+      </div>
+    </aside>
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <div class="page-title" id="pageTitle">Executive Summary</div>
+          <div class="page-subtitle" id="pageSubtitle">Workbook-driven SaaS workspace</div>
+        </div>
+        <div class="top-actions">
+          <div class="status-pill"><span class="status-dot"></span><span id="statusText">Ready</span></div>
+          <button class="btn subtle" id="installBtn">Install App</button>
+          <button class="btn subtle" id="openBtn">Open Workbook</button>
+          <button class="btn subtle" id="refreshBtn">Refresh from Workbook</button>
+          <button class="btn primary" id="saveBtn">Save Workbook</button>
+        </div>
+      </header>
+      <section class="toolbar">
+        <div class="toolbar-card">
+          <label>Demo Company</label>
+          <select id="prospectSelect"></select>
+        </div>
+        <div class="toolbar-card">
+          <label>Workbook Mode</label>
+          <div class="note-text">Local Excel file via browser file access</div>
+        </div>
+        <div class="toolbar-card wide">
+          <label>Sales note</label>
+          <div id="hintText" class="note-text">Open the workbook once, then install the app from Edge. Use Refresh or Save when needed.</div>
+        </div>
+      </section>
+      <section id="tabs" class="context-tabs"></section>
+      <section id="canvas"></section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
